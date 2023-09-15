@@ -5,8 +5,9 @@ public class DietelExercise418 {
     private int  accountNumber;
     private int balance;
     private int total;
-    private int totalCredit;
+    private int totalCreditApplied;
     private int creditLimit;
+    private int newBalance;
 
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
@@ -30,17 +31,19 @@ public class DietelExercise418 {
         this.total = total;
         
     }
-
-    public void totalCredits(int totalCredit) {
-        this.totalCredit = totalCredit;
+    public int getTotalItemscharged(){
+        return total;
+    }
+    public void setTotalCreditsAppliedtoAccount(int totalCredit) {
+        this.totalCreditApplied = totalCredit;
         
     }
 
-    public int getTotalCredit() {
-        return totalCredit;
+    public int getTotalCreditAppliedToaccount() {
+        return totalCreditApplied;
     }
 
-    public void allowedCreditLimit(int creditLimit) {
+    public void setCreditLimit(int creditLimit) {
         this.creditLimit = creditLimit;
 
     }
@@ -49,7 +52,14 @@ public class DietelExercise418 {
         return creditLimit;
     }
 
-    public void newBalance() {
-        int newBalance = b
+    public void setNewBalance() {
+        this.newBalance = balance + total -totalCreditApplied;
+        if (newBalance > creditLimit) System.out.println("Credit limit exceeded");
+    }
+
+
+    public int getNewbalance() {
+        return balance;
     }
 }
+

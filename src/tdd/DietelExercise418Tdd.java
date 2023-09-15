@@ -21,27 +21,33 @@ public class DietelExercise418Tdd {
          assertEquals(2073654,test.getAccountNumber());
          test.setBalanceAtTheBeginingOfTheMonth(500);
          assertEquals(500,test.getBalanceAtTheBeginningOfTheMonth());
-         test.totalItemsCharged(500);
+         test.setTotalItemsCharged(500);
 
     }
 
             @Test
     public void testTotalOfAllCreditsApplied(){
          DietelExercise418 test = new DietelExercise418();
-         test.totalCredits(400);
-         assertEquals(400,test.getTotalCredit());
+         test.setTotalCreditsAppliedtoAccount(400);
+         assertEquals(400,test.getTotalCreditAppliedToaccount());
      }
         @Test
     public void testAllowedCreditLimit(){
          DietelExercise418 test = new DietelExercise418();
-         test.allowedCreditLimit(500);
+         test.setCreditLimit(500);
          assertEquals(500,test.getCreditLimit());
 
      }
         @Test
     public void testIfCanCalculate(){
          DietelExercise418 test= new DietelExercise418();
-         test.newBalance();
+         test.setBalanceAtTheBeginingOfTheMonth(500);
+         assertEquals(500,test.getBalanceAtTheBeginningOfTheMonth());
+         test.setTotalItemsCharged(300);
+         assertEquals(300,test.getTotalItemscharged());
+         test.setTotalCreditsAppliedtoAccount(200);
+         test.setNewBalance();
+         assertEquals(500,test.getNewbalance());
         }
 
 
