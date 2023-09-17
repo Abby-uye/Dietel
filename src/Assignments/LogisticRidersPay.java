@@ -1,21 +1,12 @@
 package Assignments;
 
-import java.util.Scanner;
-
 public class LogisticRidersPay {
-    public static void main(String[] args) {
-        Scanner input = new Scanner (System.in);
-        System.out.println(" enter the total number of delivers you made today");
-        int numberOfDeliveries = input.nextInt();
-        paySlip(numberOfDeliveries);
-
-    }
 
 
-    public static void paySlip (int  numberOfDeliveries){
-        int commission  = 0;
+    public static int paySlip (int  numberOfDeliveries){
+        int commission;
         int base = 5000;
-        int payment = 0;
+        int payment;
         if (numberOfDeliveries < 50) {
             commission = 160 * numberOfDeliveries;
             payment = base + commission;
@@ -36,7 +27,7 @@ public class LogisticRidersPay {
         System.out.println("Your pay for the day is " + payment);
 
 
-
+        return payment ;
     }
 
 }
