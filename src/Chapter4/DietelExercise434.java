@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class DietelExercise434 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int number = 90;
-        System.out.println("Enter a number: ");
-        int userNumber = input.nextInt();
-        while (userNumber < number){
+        System.out.println("Enter a number");
+        int number  = input.nextInt();
+        int sum = 0;
+        while (sum < number){
             System.out.println("Enter another number: ");
-            userNumber = input.nextInt();
-            System.out.println(number);
+            int userNumber = input.nextInt();
+            sum = sum + userNumber;
+            System.out.println(sum);
         }
     }
 }
