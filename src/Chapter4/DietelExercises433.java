@@ -2,17 +2,20 @@ package Chapter4;
 
 public class DietelExercises433 {
     public static void main(String[] args) {
-        int number = 1;
-        int secondNumber = 0;
-        while (number <= 8) {
-            while (secondNumber <= 8) {
+
+        for (int counter = 0; counter < 4;counter++){
+            System.out.println();
+            for (int index = 0; index <8 ; index++){
+                System.out.print(" ");
                 System.out.print("*");
                 System.out.print(" ");
-                System.out.println();
-                secondNumber += 1;
             }
-            number+=1;
 
+            System.out.println();
+            for (int indexTwo = 0; indexTwo <8 ; indexTwo++){
+                System.out.print(" ");
+                System.out.print(" *");
+            }
         }
     }
 }

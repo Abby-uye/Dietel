@@ -15,5 +15,9 @@ public class DietelExercise437 {
         int y1 = scanner.nextInt();
         System.out.println("Enter x1 ");
         int y2 = scanner.nextInt();
+
+        if (x1 == x2 ){
+            System.out.println("It is  perpendicular to an axis");
+        }
     }
 }

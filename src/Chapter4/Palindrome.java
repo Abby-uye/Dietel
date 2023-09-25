@@ -2,7 +2,7 @@ package Chapter4;
 
 import java.util.Scanner;
 
-public class DietelExercise430 {
+public class Palindrome {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a number to see if it is palindrom or not");
@@ -14,9 +14,8 @@ public class DietelExercise430 {
             reverse = reverse * 10 + number;
             userInput /= 10;
         }
-            if (formerNumber == reverse){
-                System.out.println("The number you enterd is palindrom");
-            }else System.out.println("The number you entered is not a palindrome number");
-        }
+        if (formerNumber == reverse){
+            System.out.println("The number you enterd is palindrom");
+        }else System.out.println("The number you entered is not a palindrome number");
     }
-
+}

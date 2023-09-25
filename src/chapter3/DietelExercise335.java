@@ -1,4 +1,4 @@
-package Chapter4;
+package chapter3;
 
 public class DietelExercise335 {
     public static void main(String[] args) {
