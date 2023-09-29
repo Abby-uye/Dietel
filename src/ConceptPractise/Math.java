@@ -9,6 +9,6 @@ public class Math {
         int number1 = input.nextInt();
         int number2 = input.nextInt();
         int number3 = input.nextInt();
-        System.out.printf("math.max %d %d %d ",number1,number2,number3);
+        System.out.printf("%d %d %d ",number1,number2,number3);
     }
 }
