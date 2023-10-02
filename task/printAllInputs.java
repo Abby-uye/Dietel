@@ -17,6 +17,7 @@ public class printAllInputs {
 
         }
         for (int index:userInputs){
+            System.out.println(index);
 
         }
         }

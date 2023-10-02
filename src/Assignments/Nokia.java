@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class Nokia {
     public static void main(String[] args) {
-        Scanner nokia = new Scanner(System.in);
+
+
+
+    }
+        public static int phoneBook (){
+            Scanner nokia = new Scanner(System.in);
         System.out.println("""
                 1-> phone book
                 2 _>message
