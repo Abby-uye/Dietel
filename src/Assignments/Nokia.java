@@ -7,13 +7,12 @@ public class Nokia {
 
     public static void main(String[] args) {
         phoneBook();
-
     }
 
     public static void phoneBook() {
         System.out.println("""
                 1-> phone book
-                2 _>message
+                2 ->message
                 3->chat
                 4->Message
                 5->Tones

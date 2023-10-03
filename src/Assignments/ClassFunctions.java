@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.function.Supplier;
 
 public class ClassFunctions {
-    public static int number(int[] numbers) {
+    public static int findLargestNumber(int[] numbers) {
         int largest = 0;
         for (int item = 0; item < numbers.length; item++) {
             if (numbers[item] > largest) {
@@ -15,7 +15,7 @@ public class ClassFunctions {
 
     }
 
-    public static boolean check(int[] numbers, int checker) {
+    public static boolean checkifNumberExist(int[] numbers, int checker) {
         for (int item = 0; item < numbers.length; item++) {
             if (numbers[item] == checker) {
                 return true;
@@ -24,7 +24,7 @@ public class ClassFunctions {
         return false;
     }
 
-    public static int[] oddPosition(int[] numbers) {
+    public static int[] numbersInddPosition(int[] numbers) {
 
         int[] oddPosition = new int[numbers.length / 2];
         int count = 0;
@@ -37,7 +37,7 @@ public class ClassFunctions {
 
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int[] result = oddPosition(numbers);
+        int[] result = numbersInddPosition(numbers);
         System.out.println(Arrays.toString(result));
     }
 
