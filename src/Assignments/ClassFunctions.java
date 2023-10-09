@@ -1,18 +1,10 @@
 package Assignments;
 
 import java.util.Arrays;
-import java.util.function.Supplier;
 
 public class ClassFunctions {
-//    public static int findLargestNumber(int[] numbers) {}
-////
-//    public static void main(String[] args) {
-//        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-//        int[] result = oddPosition(numbers);
-//        System.out.println(Arrays.toString(result));
-//    }
-    
-    public static int largestNumber(int[] numbers) {
+
+    public static int findLargestNumber(int[] numbers) {
 
         int largest = 0;
         for (int item = 0; item < numbers.length; item++) {
@@ -24,25 +16,15 @@ public class ClassFunctions {
 
     }
 
-    public static int reverse(int[] numbers) {
-    for (int item =0;  item < numbers.length; item /=2){
+    public static int[] reverseAnArray(int[] numbers) {
+        int[] reversedArray = new int[numbers.length];
+        int count = 0;
+        for (int item = numbers.length - 1; item >= 0; --item) {
+            reversedArray[count] = numbers[item];
+            count++;
+        }
+        return reversedArray;
 
-
-    }
-        return 0;
-
-        // 1.
-        // Create a loop that loops through the array n/2 times
-        // For x element, swap it with n - x element (e.g swap 0th index with last index)
-            // Create a temp variable
-            // Assign index x value to temp
-            // Assign index n-x value to index x
-            // Assign temp to the index n - x
-
-        // 2.
-        // Create a new array of the same size as numbers array
-        // Loop through starting from index n-1 (the end)
-            // Assing each value to the new array from the start
     }
 
     public static boolean checkIfNumberExist(int[] numbers, int checker) {
@@ -55,7 +37,7 @@ public class ClassFunctions {
         return false;
     }
 
-    public static int[] numbersInddPosition(int[] numbers) {
+    public static int[] numbersInOddPosition(int[] numbers) {
 
         int[] oddPosition = new int[numbers.length / 2];
         int count = 0;
@@ -66,13 +48,23 @@ public class ClassFunctions {
         return oddPosition;
     }
 
+    public static int [] numbersAtEvenPosition(int[] numbers){
+        int [] evenPosition  = new int[numbers.length  /2] ;
+        int count = 0;
+        for (int index =0;index<numbers.length;index+=2){
+            evenPosition[count] = numbers[index];
+            count++;
+        }
+        return evenPosition;
 
-    public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int[] result = numbersInddPosition(numbers);
-        System.out.println(Arrays.toString(result));
     }
 
+
+    public static void main(String[] args) {
+       int [] numbers = {1,2,3,4,5,6,7};
+       int[] result = new int[]{runningTotal(numbers)};
+       System.out.println(Arrays.toString(result));
+    }
 
     public static int runningTotal(int[] numbers) {
         int total = 0;
@@ -123,13 +115,44 @@ public class ClassFunctions {
         } while (count < numbers.length);
         return sum;
     }
+
+    public static String[] concatenateArray(String[] firstList, int[] secondList) {
+        String [] concatenatedList = new String[firstList.length + secondList.length];
+        int count = 0;
+        for (int index = 0; index < firstList.length; index++) {
+            concatenatedList[count] = firstList[index];
+            count++;
+        }
+        for (int index = 0; index < secondList.length; index++) {
+            concatenatedList[count] = String.valueOf(secondList[index]);
+            count++;
+        }
+        return concatenatedList;
+    }
+
+public static String[] combinedArray(String[] firstList ,int[] secondList){
+        String [] combinedList = new String[firstList.length+secondList.length];
+        int evenCount = 0;
+        int oddCount = 1;
+        for (int index = 0;index <firstList.length;index++){
+            combinedList[evenCount] = firstList[index];
+            evenCount+=2;
+        }
+        for (int index = 0;index<secondList.length;index++){
+            combinedList[oddCount] = String.valueOf(secondList[index]);
+            oddCount+=2;
+        }return combinedList;
 }
-//public static int concatenateArray(int[] firstList , int[] secondList ){
-//        int firstListLenght = firstList.length;
-////        int secondListLenght = secondList.length;
-////        int []result = new int[firstList + secondList]
-////}
-////
-////}
+public static int [] listOfNumbers(int numbers ){
+        int[] seperatedNumbers = new int[4];
+    int digit = numbers /1000%10 ;
+    int digit2 = numbers / 100%10;
+    int digit3 = numbers / 10%10;
+    int digit4 = numbers%10;
+    for (int index = 0 ; index <=1;index++){
+            seperatedNumbers[index] = digit;
+        }
 
-
+return seperatedNumbers;
+    }
+}
