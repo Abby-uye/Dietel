@@ -1,80 +1,47 @@
 package Assignments;
 
 public class CreditCardFunctions {
-     int[] cardNumbers;
-     int[] doubledCardNumbers ;
-     int result = 0;
-     int oddTotal = 0;
-     boolean validNumber = true;
-     int sumOfOddAndSingleNumbers =0;
-     String creditCardType = "";
-     int creditCardLen = 0;
-    public  int [] creditCardNumber (int[] cardNumbers){
-        this.cardNumbers = cardNumbers;
-        doubledCardNumbers = new int[cardNumbers.length/2];
-        int count = cardNumbers[0];
-        int result = 0;
-        int sum =0;
-        int seperator =0;
-        for (int index = 0; index < cardNumbers.length;index+=2){
-           result = count * 2;
-            count = cardNumbers[index];
-           if (result >= 10 || result<=99){
-               while (result!= 0){
-                   seperator = result % 10;
-                   sum +=result;
-                    result /= 10;
-                   doubledCardNumbers = new int[]{result};
+    public static void main(String[] args) {
+        int [] numbers = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6};
+//        creditCardNumber(numbers);
+    }
+int [] cardNumbers ={};
+   public static String cardValidation(String cardNumbers){
+       int sum =0;
+       int oddPositionSum = 0;
+       int totalSum =0;
+       String  valid = "Valid";
+       String invalid = "Invalid";
+       for (int item =0;item<cardNumbers.length();item+=2){
+           String number = String.valueOf(cardNumbers.charAt(item));
+           int result = (Integer.parseInt(number)) * 2;
+           if (result >=10){
+               while (result!=0){
+                   int seperator = result % 10;
+                   sum+=seperator;
+                   result/=10;
                }
-           }else count = cardNumbers[index];
-        }
-return doubledCardNumbers = new int[] {result};
-    }
-    public String creditCardType(){
+           }else sum+=result;
+       }for (int index =1;index<cardNumbers.length();index+=2){
+           oddPositionSum  += cardNumbers.charAt(index);
+       }totalSum = sum + oddPositionSum;
+       if ( totalSum / 10 ==0){
+        return valid;
 
-        if (cardNumbers [0] == 4){
-            creditCardType.equals("VisaCard");
-        } else if (cardNumbers [0] ==5) {
-            creditCardType.equals("MasterCard");
-        } else if (cardNumbers[0] == 37) {
-            creditCardType.equals("AmericanExpressCards");
-        } else if (cardNumbers[0] == 6) {
-            creditCardType.equals("DiscoverCard");
-        }else creditCardType.equals("Invalid");
-    return creditCardType;
-    }
-    public int creditCardLenght(){
-        int count = 1;
-        for (int item = 0;item<=cardNumbers.length;item++){
-            count+=count;
-        }return count;
-    }
-public int addSingleNumbers(){
-        int count = 0;
-    for (int index = 0;index<doubledCardNumbers.length;index++ ){
-           result +=doubledCardNumbers[count];
-        }
-    return result;
-    }
-public int sumNumbersAtOddPosition(){
-        int count = 1;
-        for (int index =0; index<cardNumbers.length; index++){
-            oddTotal+=cardNumbers[count];
+       }else return invalid;
 
-        }return oddTotal;
-}
-public boolean sumOddAndSingleNumbers(){
-
-        sumOfOddAndSingleNumbers = result+oddTotal;
-        if (sumOfOddAndSingleNumbers %2 == 0){
-            validNumber = true;
-            System.out.println("Credit Card Validity Status: Valid");
-        } else if (sumOfOddAndSingleNumbers %2 != 0) {
-            validNumber = false;
-            System.out.println("Credit Card Validity Status: Invalid");
-        }
-
-    return validNumber;
     }
+//    public static String creditCardType(){
+//        String creditCardType ="";
+//        switch (cardNumbers(0)charAt{
+//            case 4 -> creditCardType.equals("VisaCard");
+//            case 5 -> creditCardType.equals("MasterCard");
+//            case 37 -> creditCardType.equals("American Express Cards");
+//            case 6 -> creditCardType.equals("Discover  Card");
+//            default -> creditCardType.equals("Invalid");
+//        }
+//
+//    return creditCardType;
+//    }
 
 }
