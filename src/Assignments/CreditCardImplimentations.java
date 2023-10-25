@@ -13,6 +13,7 @@ public class CreditCardImplimentations {
         char firstCharacter = creditCardNumber.charAt(0);
         char secondCharacter = creditCardNumber.charAt(1);
         String creditCardType = "";
+        String creditCardValidation = "";
         if (firstCharacter == '4'){
             creditCardType = "Visa Cards";
         } else if (firstCharacter == '6') {
@@ -27,11 +28,8 @@ public class CreditCardImplimentations {
         int evenPosition = 0;
         int oddPosition =0;
         int totalSum =0;
-        int lenght = 0;
-        for (int index =0;index<=creditCardNumber.length();index++){
-            lenght+=index;
-        }
-    for (int index = creditCardNumber.length()-1;index>=0;index-=2){
+
+    for (int index =0;index<creditCardNumber.length();index+=2){
         String numbers = String.valueOf(creditCardNumber.charAt(index));
         int multiply = Integer.parseInt(numbers)*2;
 
@@ -41,18 +39,21 @@ public class CreditCardImplimentations {
              evenPosition += firstValue+secondValue;
         }else evenPosition +=multiply;
 
-    }for (int index = creditCardNumber.length();index>=0;index-=2){
+    }for (int index = 0;index<creditCardNumber.length();index+=2){
 
         String numbers = String.valueOf(creditCardNumber.charAt(index));
         int even = Integer.parseInt(numbers);
           oddPosition += even;
             }totalSum = evenPosition+oddPosition;
-    String creditCardValidation = "";
+        if (creditCardType == "Invalid Cards"){
+            creditCardValidation ="Invalid";
+        }
         if (totalSum % 10 ==0){
-            creditCardValidation = "Valid";
-        }else creditCardValidation="Invalid";
-        System.out.print("***********************************");
-        System.out.printf("** Credit Card Type: %s%n** Credit Card Number: %s%n** Credit Card Length: *d%n** Credit Card Validity: %s%n ",creditCardType,creditCardNumber,lenght,creditCardValidation);
+            creditCardValidation  = "valid" ;
+        }else creditCardValidation="invalid";
+
+        System.out.print("***********************************\n");
+        System.out.printf("** Credit Card Type: %s%n** Credit Card Number: %s%n** Credit Card Length: %d%n** Credit Card Validity: %s%n ",creditCardType,creditCardNumber,creditCardNumber.length(),creditCardValidation);
         System.out.println("**********************************");
     }
 }

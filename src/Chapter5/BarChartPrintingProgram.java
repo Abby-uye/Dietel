@@ -12,8 +12,11 @@ public class BarChartPrintingProgram {
             for (int asterisks =0;asterisks<userInput;asterisks++){
                 System.out.print("* ");
             }
+
+
+
             System.out.println();
         }
-
+        System.out.print("*");
     }
 }
