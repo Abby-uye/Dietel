@@ -1,5 +1,6 @@
 package ConceptPractise;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -69,11 +70,47 @@ public class PlayGround {
 //
 //    }
 
+//    public static void main(String[] args) {
+//        String name = "Abigail";
+//        for (int index = name.length(); index >= 0; index--) {
+//            String charName = String.valueOf(name.charAt(index));
+//            System.out.println(charName);
+//        }
+//    }
+//}
+
+//    public static int[] removeDuplicate(int[] numbers) {
+//        int count = 0;
+//        ArrayList<Integer> duplicatedList = new ArrayList<>();
+//        for (int index = 0; index <= numbers.length - 1; index++) {
+//            count = numbers[index];
+//            for (int item = index + 1; item <= index; item++) {
+//                if (count == numbers[item]) {
+//                    duplicatedList.add(numbers[item]);
+//                }
+//            }
+//
+//        }
+//        return convertListToArray(duplicatedList);
+//    }
+//
+//    public static int[] convertListToArray(ArrayList<Integer> numbers) {
+//        int[] convertedList = new int[numbers.size()];
+//        for (int i = 0; i < numbers.size(); i++) {
+//            convertedList[i] = numbers.get(i);
+//        }
+//        return convertedList;
+//    }
+//
+//    public static void main(String[] args) {
+//        System.out.println(Arrays.toString(removeDuplicate(new int[]{2, 3, 4, 5, 6, 7, 8, 2, 4, 5})));
+//    }
+//}
+
     public static void main(String[] args) {
-        String name = "Abigail";
-        for (int index = name.length(); index >= 0; index--) {
-            String charName = String.valueOf(name.charAt(index));
-            System.out.println(charName);
-        }
+        String str = "i am a girl";
+        String theSub = str.substring(2, 4);
+
+        System.out.println(theSub);
     }
 }

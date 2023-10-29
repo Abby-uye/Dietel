@@ -53,85 +53,99 @@ public class CheckOutApp {
 
             System.out.println("Want to add more? ");
             addMore = inputs.nextLine().toLowerCase();
-            if (addMore == "No"){
+            if (addMore == "No") {
                 addMoreCheck = true;
             }
 
-        } while (addMoreCheck) ;
+        } while (addMoreCheck);
 
-            double subTotal = 0;
-        double billTotal =0;
+        double subTotal = 0;
+        double billTotal = 0;
         for (int item : pricesOfItem) {
-                for (int items : quantitity) {
-                    subTotal += item * items;
-                }
+            for (int items : quantitity) {
+                subTotal += item * items;
             }
+        }
 
-            double discount = (double) 8 / 100 * subTotal;
-            double vat = (double) 17.50 / 100 * subTotal;
-             billTotal = subTotal - discount + vat;
+        double discount = (double) 8 / 100 * subTotal;
+        double vat = (double) 17.50 / 100 * subTotal;
+        billTotal = subTotal - discount + vat;
 
-//            System.out.printf("""
-//                    SEMICOLON STORES
-//                    MAIN BRANCH
-//                    LOCATION: 312 Herbert Maculay Way,Sabo,Yaba,Lagos.
-//                    Tel: 09071272729
-//                    Date: 11-10-2023,08:55:11 pm
-//                    Cashier Name: %s%n
-//                    Customer Name: %s%n
-//                    --------------------------------------------------------------
-//                    ---------------------------------------------------------------
-//                          ITEM       QUANTITY         PRICE          TOTAL(NGN)
-//                    ----------------------------------------------------------------
-//                    %s     %d      %f        %f%n
-//
-//                    ----------------------------------------------------------------
-//                         SubTotal:     %f%n      Discount:         %f%n          Vat @ 17.5:    %f%n
-//                     -----------------------------------------------------------------
-//                     ------------------------------------------------------------------
-//                                             Bill Total:     %f%n
-//                    -------------------------------------------------------------------
-//                     -------------------------------------------------------------------
-//                                 This Is Not A Receipt Kindly Pay %f%n
-//                    -------------------------------------------------------------------
-//                    -------------------------------------------------------------------
-//                    """, customerName, cashierName, nameOfProduct, quantitity, pricesOfItem, total, subTotal, discount, vat, billTotal, billTotal);
+        System.out.printf("""
+                SEMICOLON STORES
+                MAIN BRANCH
+                LOCATION: 312 Herbert Maculay Way,Sabo,Yaba,Lagos.
+                Tel: 09071272729
+                Date: 11-10-2023,08:55:11 pm
+                Cashier Name: %s%n
+                Customer Name: %s%n
+                --------------------------------------------------------------
+                ---------------------------------------------------------------
+                      ITEM       QUANTITY         PRICE          TOTAL(NGN)
+                ----------------------------------------------------------------
+                """, cashierName, customerName);
+        for (int count = 0; count < quantitity.size(); count++) {
+            System.out.printf("""
+                                %s     %d      %d        %f%n
 
-            System.out.println("Enter amount tendered by customer: ");
-            String tenderedAmount = inputs.next();
-            double tenderedCash = 0;
-            if (tenderedAmount.matches("\\d+")) {
-                tenderedCash = Integer.parseInt(tenderedAmount);
-            } else {
-                System.out.println("Amount tendered by customer: ");
-                tenderedAmount = inputs.next();
-            }
-            double balance = tenderedCash - billTotal;
+                            ----------------------------------------------------------------
+                                 SubTotal:         %.2f%n          Discount:         %.2f%n             Vat @ 17.5:    %.2f%n
+                             -----------------------------------------------------------------
+                             ------------------------------------------------------------------
+                                                  Bill Total:     %f%n
+                            -------------------------------------------------------------------
+                             -------------------------------------------------------------------
+                                         This Is Not A Receipt Kindly Pay %f%n
+                            -------------------------------------------------------------------
+                            -------------------------------------------------------------------
+                            """, nameOfProduct.get(count), quantitity.get(count), pricesOfItem.get(count),
+                    total.get(count), subTotal, discount, vat, billTotal, billTotal);
+        }
+        System.out.println("Enter amount tendered by customer: ");
+        String tenderedAmount = inputs.next();
+        double tenderedCash = 0;
+        if (tenderedAmount.matches("\\d+")) {
+            tenderedCash = Integer.parseInt(tenderedAmount);
+        } else {
+            System.out.println(" Enter amount tendered by customer: ");
+            tenderedAmount = inputs.next();
+        }
+        double balance = tenderedCash - billTotal;
 
-//        System.out.printf("""
-//                SEMICOLON STORES
-//                MAIN BRANCH
-//                LOCATION: 312 Herbert Maculay Way,Sabo,Yaba,Lagos.
-//                Tel: 09071272729
-//                Date: 11-10-2023,08:55:11 pm
-//                Cashier Name: %s%n
-//                Customer Name: %s%n
-//                --------------------------------------------------------------
-//                ---------------------------------------------------------------
-//                      ITEM       QUANTITY         PRICE          TOTAL(NGN)
-//                ----------------------------------------------------------------
-//                %s     %d      %f        %f%n
-//                ----------------------------------------------------------------
-//                     SubTotal:     %f%n      Discount:         %f%n          Vat @ 17.5:    %f%n
-//                 -----------------------------------------------------------------
-//                 ------------------------------------------------------------------
-//                                         Bill Total:     %f%n
-//                -------------------------------------------------------------------
-//                 -------------------------------------------------------------------
-//                             This Is Not A Receipt Kindly Pay %f%n
-//                -------------------------------------------------------------------
-//                -------------------------------------------------------------------
-//                """, customerName, cashierName, nameOfProduct, quantitity, pricesOfItem, total, subTotal, discount, vat, billTotal, billTotal);
+        System.out.printf("""
+                 SEMICOLON STORES
+                 MAIN BRANCH
+                 LOCATION: 312 Herbert Maculay Way,Sabo,Yaba,Lagos.
+                 Tel: 09071272729
+                 Date: 11-10-2023,08:55:11 pm
+                 Cashier Name: %s%n
+                 Customer Name: %s%n
+                 --------------------------------------------------------------
+                 ---------------------------------------------------------------
+                       ITEM       QUANTITY         PRICE          TOTAL(NGN)
+                 ----------------------------------------------------------------
+                             
+                """, customerName, cashierName);
+        for (int index = 0; index < quantitity.size(); index++) {
+
+
+            System.out.printf("""
+                          
+                    %s     %d      %d        %f%n
+                    ----------------------------------------------------------------
+                         SubTotal:     %f%n      Discount:         %.2f%n          Vat @ 17.5:    %.2f%n
+                     -----------------------------------------------------------------
+                     ------------------------------------------------------------------
+                                             Bill Total:     %f%n
+                                             Amount paid:    %f%n
+                                             Balance :     %f
+                                             
+                    -------------------------------------------------------------------
+                     -------------------------------------------------------------------
+                                 Thank You For Your Patronage
+                    -------------------------------------------------------------------
+                    -------------------------------------------------------------------
+                    """, nameOfProduct, quantitity.get(index), pricesOfItem.get(index), total.get(index), subTotal, discount, vat, billTotal, billTotal,tenderedAmount,balance);
         }
     }
-
+}
