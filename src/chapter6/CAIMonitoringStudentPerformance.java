@@ -1,7 +1,7 @@
 package chapter6;
 
+import javax.swing.*;
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public class CAIMonitoringStudentPerformance {
     public static int generateRandomNumber() {
@@ -9,46 +9,43 @@ public class CAIMonitoringStudentPerformance {
         int digit = random.nextInt(0, 11);
         return digit;
     }
+public static SecureRandom importSecureRandom(){
+        return  new SecureRandom();
+}
 
-    public static int generateUserInputs() {
-        return new Scanner(System.in).nextInt();
-
-    }
 
     public static int generateRandemGoodResponse() {
-        SecureRandom random = new SecureRandom();
+        SecureRandom random = importSecureRandom();
         int response = random.nextInt(1, 5);
         switch (response) {
-            case 1 -> System.out.println("Very good!");
-            case 2 -> System.out.println("Excellent!");
-            case 3 -> System.out.println("Nice work!");
-            case 4 -> System.out.println("Keep up the good work!");
+            case 1 -> JOptionPane.showMessageDialog(null,"Very good!");
+            case 2 -> JOptionPane.showMessageDialog(null,"Excellent");
+            case 3 -> JOptionPane.showMessageDialog(null,"Nice work!");
+            case 4 -> JOptionPane.showMessageDialog(null,"Keep up the good work");
         }
         return response;
     }
 
     public static int generateRandomNotSoGoodResponse() {
-        SecureRandom random = new SecureRandom();
+        SecureRandom random = importSecureRandom();
         int response = random.nextInt(1, 5);
         switch (response) {
-            case 1 -> System.out.println("No. Please try again.");
-            case 2 -> System.out.println("Wrong. Try once more.");
-            case 3 -> System.out.println("Don't give up!");
-            case 4 -> System.out.println("No. Keep trying.");
+            case 1 -> JOptionPane.showMessageDialog(null,"Please try again");
+            case 2 -> JOptionPane.showMessageDialog(null,"Wrong! try once more");
+            case 3 -> JOptionPane.showMessageDialog(null,"Dont give up");
+            case 4 -> JOptionPane.showMessageDialog(null,"Keep trying");
         }
         return response;
     }
 
-
     public static void randomMultiplication() {
         int passCount =0;
         int failCount =0;
-        int answer = 0;
         int firstNumber = generateRandomNumber();
         int secondNumber = generateRandomNumber();
         for (int index = 0; index < 10 ; index++) {
-            System.out.printf("Enter the correct answer %d * %d = ", firstNumber, secondNumber);
-            answer = generateUserInputs();
+            String input = JOptionPane.showInputDialog("Enter the correct answer "+firstNumber + "*" + secondNumber + '=');
+            int answer = Integer.parseInt(input);
             if (answer == firstNumber * secondNumber) {
                 generateRandemGoodResponse();
                 firstNumber = generateRandomNumber();
@@ -66,10 +63,10 @@ public class CAIMonitoringStudentPerformance {
     }
     public static void calculatePercentage(int passCount,int failCount){
         if (passCount >= 8){
-            System.out.println("Congratulations you are ready for the next level");
+            JOptionPane.showMessageDialog(null,"You are ready to move to the next level");
         }
         if (failCount >= 8){
-            System.out.println("'Please ask your teacher for extra help'");
+            JOptionPane.showMessageDialog(null,"Please ask your teacher for help");
         }
 
     }

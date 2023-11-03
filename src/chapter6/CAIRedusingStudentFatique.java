@@ -1,5 +1,5 @@
 package chapter6;
-
+import javax.swing.*;
 import java.security.SecureRandom;
 import java.util.Scanner;
 
@@ -19,10 +19,10 @@ public class CAIRedusingStudentFatique {
         SecureRandom random = new SecureRandom();
         int response = random.nextInt(1, 5);
         switch (response) {
-            case 1 -> System.out.println("Very good!");
-            case 2 -> System.out.println("Excellent!");
-            case 3 -> System.out.println("Nice work!");
-            case 4 -> System.out.println("Keep up the good work!");
+            case 1 -> JOptionPane.showMessageDialog(null,"Very good!");
+            case 2 -> JOptionPane.showMessageDialog(null,"Excellent");
+            case 3 -> JOptionPane.showMessageDialog(null,"Nice work!");
+            case 4 -> JOptionPane.showMessageDialog(null,"Keep up the good work");
         }
         return response;
     }
@@ -31,22 +31,21 @@ public class CAIRedusingStudentFatique {
         SecureRandom random = new SecureRandom();
         int response = random.nextInt(1, 5);
         switch (response) {
-            case 1 -> System.out.println("No. Please try again.");
-            case 2 -> System.out.println("Wrong. Try once more.");
-            case 3 -> System.out.println("Don't give up!");
-            case 4 -> System.out.println("No. Keep trying.");
+            case 1 -> JOptionPane.showMessageDialog(null,"Please try again");
+            case 2 -> JOptionPane.showMessageDialog(null,"Wrong! try once more");
+            case 3 -> JOptionPane.showMessageDialog(null,"Dont give up");
+            case 4 -> JOptionPane.showMessageDialog(null,"Keep trying");
         }
         return response;
     }
 
     public static void randomMultiplication() {
-        int answer = 0;
         int firstNumber = generateRandomNumber();
         int secondNumber = generateRandomNumber();
 
         while (true) {
-            System.out.printf("Enter the correct answer %d * %d = ", firstNumber, secondNumber);
-            answer = generateUserInputs();
+            String input = JOptionPane.showInputDialog("What is the correct answer "+ firstNumber+" *"+ secondNumber + "=");
+            int answer = Integer.parseInt(input);
             if (answer == firstNumber * secondNumber) {
                 generateRandemGoodResponse();
                 firstNumber = generateRandomNumber();
