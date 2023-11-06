@@ -29,7 +29,7 @@ public class ArrayItemPlus1 {
     }
 
     public static void main(String[] args) {
-       int [] theList = {9};
+       int [] theList = {1,2,3,4,9};
       int[]  result = plusOne(theList);
         System.out.println(Arrays.toString(result));
     }

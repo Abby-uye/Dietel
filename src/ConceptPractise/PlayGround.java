@@ -1,5 +1,5 @@
 package ConceptPractise;
-
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -106,11 +106,32 @@ public class PlayGround {
 //        System.out.println(Arrays.toString(removeDuplicate(new int[]{2, 3, 4, 5, 6, 7, 8, 2, 4, 5})));
 //    }
 //}
+//
+
+public static int[] ascendingArray(int[] array){
+int [] numbers = new int[array.length];
+    for (int index  = 0; index  < array.length; index ++) {
+        for (int item = index; item < array.length-1 ; item++) {
+            int temp =array.length+1;
+            if (array[item] <array[item+1]){
+                array[index] = temp;
+                numbers[index] = array[index];
+
+
+            }
+
+        }
+    }
+        return numbers;
+    }
 
     public static void main(String[] args) {
-        String str = "i am a girl";
-        String theSub = str.substring(2, 4);
+    int [] sort = {5,4,8,2,1,5,};
 
-        System.out.println(theSub);
-    }
-}
+        System.out.println(Arrays.toString(ascendingArray(sort)));
+        //JOptionPane.showMessageDialog(null, "Enter your name", "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+
+
+

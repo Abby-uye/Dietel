@@ -1,4 +1,4 @@
-package tdd;
+package assignmentTdd;
 
 import Assignments.CheckOutAppFunctions;
 import org.junit.jupiter.api.Test;
@@ -69,6 +69,13 @@ void testThatCanSetStoreLocation(){
     expected.add(700);
     assertEquals(expected,app.priceOfItems(700));
 }
+@Test
+    void testThatCanDisplayDesign(){
+    CheckOutAppFunctions app = new CheckOutAppFunctions();
+    String actual = CheckOutAppFunctions.displayDesign();
+    String expected = ">".repeat(50);
+    assertEquals(expected,actual);
 
+}
 
 }

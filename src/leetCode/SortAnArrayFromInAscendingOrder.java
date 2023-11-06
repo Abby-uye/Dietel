@@ -4,15 +4,14 @@ import java.util.Arrays;
 
 public class SortAnArrayFromInAscendingOrder {
     public static int[] ascendingSort(int[] nums){
+        int [] newArray = new int[nums.length];
         int temp = 0;
-        for (int index = 0; index < nums.length; index++) {
-            for (int item = index; item < nums.length-1; item++) {
-                if (nums[index] > nums[item + 1]){
+        for (int index = nums.length-1; index >0; index++) {
+                if (nums[index] > newArray[index -1]){
                      temp = nums[index];
-                    nums[index] = nums[item + 1];
-                    nums[item +1] = temp;
+                    nums[index] = nums[index - 1];
+                    nums[index -1] = temp;
 
-            }
         }
         }
     return nums;
