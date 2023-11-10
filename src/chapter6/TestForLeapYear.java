@@ -5,15 +5,21 @@ public class TestForLeapYear {
     private int year;
     String yearType="";
     public TestForLeapYear(int year){
-        if(year %4 == 0 || year%400 ==0){
+        if(year %4 == 0 && year%100 !=0){
             yearType = "leap year";
-        }
+        }else if (year%100 ==0 && year %400 ==0) {
+            yearType = "Leap year";
+
+        }else{ yearType = "Not leap year";}
         this.year = year;
     }
     public void setYear(int year) {
-        if(year %4 == 0 || year%400 ==0){
-            yearType = "leap year";
-        }
+        if(year %4 == 0 && year%100 !=0){
+            yearType = "Leap year";
+        } else if (year%100 ==0 && year %400 ==0) {
+            yearType = "Leap year";
+
+        }else{ yearType = "Not leap year";}
         this.year = year;
     }
     public String getYearType() {
