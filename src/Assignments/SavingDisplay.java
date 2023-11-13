@@ -20,8 +20,8 @@ public class SavingDisplay {
         System.out.println("Saved successfully");
     }
 public static String displayDesign(){
-        String design = "-";
-        return design.repeat(50);
+        String design = "=";
+        return design.repeat(150);
 }
 
 }

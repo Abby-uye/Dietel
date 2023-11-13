@@ -79,25 +79,8 @@ public class PizzaFunctionTdd {
     void testThatCanCalculateThatSmallBoxesContainTotalNumberOfSlices(){
         assertEquals(8,calculateSmallBoxesContainTotalNumberOfSlices(calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(5,0,0),10)));
     }
-    @Test
-    void testThatCanGetLeftOverSlicesFromLargestBoxes(){
-        assertEquals(9, leftOverSlicesForLargestBox(calculateMediumBoxesContainTotalNumberOfSlices(calculateNumberOfLargeBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(2,4,1),10)), calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(2, 4, 1)));
-    }
-//   @Test
-//   void testThatCanGetLeftOverFromLargeBoxes(){
-//        assertEquals(3,leftOverSlicesForLargestBox(calculateMediumBoxesContainTotalNumberOfSlices(calculateNumberOfLargeBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(0,5,0),5))));
-//   }
-//    @Test
-//    void testThatCanGetLeftOverFromMediumBoxes(){
-//        assertEquals(3,leftOverSlicesForLargestBox());
-//
-//    }
-//@Test
-//    void testThatCanCalculatePrice(){
-//        assertEquals(15000,calculatePrice(calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(21,10)));
-//}
-//@Test
-//    void testThatMediumBoxesContainTotalNumberOfSlices(){
-//      assertEquals(20,calculateMediumBoxesContainTotalNumberOfSlices(calculateLargeBoxSize()));
-//}
+   @Test
+    void testThatCanCanGetLeftoverForLargestBoxes(){
+        assertEquals(5,leftOverSlicesForLargestBox( calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(2,2,2),10),calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(2,2,2)));
+   }
 }

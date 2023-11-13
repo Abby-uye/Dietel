@@ -106,7 +106,7 @@ public static int calculateMediumBoxesContainTotalNumberOfSlices(int numberOfMed
     }
 public static int leftOverSlicesForLargestBox(int TotalNumberOfSlicesRecommendedForTheUserToPurchase,int TotalNumberOfSlicesNeeded){
         int result =0;
-        if (TotalNumberOfSlicesRecommendedForTheUserToPurchase <= TotalNumberOfSlicesNeeded){
+        if (TotalNumberOfSlicesRecommendedForTheUserToPurchase >= TotalNumberOfSlicesNeeded){
             result = TotalNumberOfSlicesRecommendedForTheUserToPurchase - TotalNumberOfSlicesNeeded;
         }else JOptionPane.showMessageDialog(null,"You do not have any left overs, meanwhile you need to increase your order to meet up your target");
 return result;
@@ -118,6 +118,6 @@ public static int calculatePrice(int numberOfLargebox){
     public static void main(String[] args) {
         int total = 21;
         int large = 10;
-        System.out.println(calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(total, large));
+        System.out.println(calculatePrice(5));
     }
 }

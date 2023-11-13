@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static java.lang.Integer.MAX_VALUE;
+import static java.lang.Integer.MIN_VALUE;
+
 public class PlayGround {
 //    public static void main(String[] args) {
 //        Scanner input = new Scanner(System.in);
@@ -108,29 +111,159 @@ public class PlayGround {
 //}
 //
 
-public static int[] ascendingArray(int[] array){
-int [] numbers = new int[array.length];
-    for (int index  = 0; index  < array.length; index ++) {
-        for (int item = index; item < array.length-1 ; item++) {
-            int temp =array.length+1;
-            if (array[item] <array[item+1]){
-                array[index] = temp;
-                numbers[index] = array[index];
+//public static int[] ascendingArray(int[] array){
+//    for (int index  = 0; index  < array.length; index ++) {
+//        for (int item = index; item < array.length ; item++) {
+//            if (array[item] < array[index]){
+//                int temp =array[index];
+//                array[index] = array[item];
+//                array[item] = temp;
+//            }
+//        }
+//    }
+//        return array;
+//    }
 
+        public static void getHighestScore(int[][] array) {
+            int numberOfStudent =4;
+            int numberOfSubject =3;
+            for (int index = 0; index < numberOfSubject;index++ ) {
+                System.out.println("Subject "+(index+1));
+                int highestScore = MIN_VALUE;
+                int lowestScore = MAX_VALUE;
+                int total = 0;
+                double average = 0;
+                int passCounter =0;
+                int failCounter =0;
+                int highestScoringStudent=0;
+                int lowestScoringStudent =0;
+                for (int item = 0; item < numberOfStudent; item++) {
+                    if (array[item][index] > highestScore){
+                        highestScore = array[item][index];
+                        highestScoringStudent=item;
+                    } else if (array[item][index]<lowestScore) {
+                        lowestScore = array[item][index];
+                        lowestScoringStudent =item;
+                    }if(array[item][index] >= 60) {
+                        passCounter++;
 
+                    } else if (array[item][index]<=60) {
+                        failCounter++;
+
+                    }
+                    total+=array[item][index];
+                    average = (double) total /numberOfStudent;
+
+                }
+
+                System.out.println("The highest scoring student  for subject "+ (index+1)+" is: student "+(highestScoringStudent+1)+" scoring "+highestScore);
+                System.out.println("The lowest scoring student  for subject "+(index+1)+" is: student "+(lowestScoringStudent+1)+" scoring "+lowestScore);
+                System.out.println("Total score is: " +total);
+                System.out.println("Average score is: "+average);
+                System.out.println("Number of passes: "+passCounter);
+                System.out.println("Number of fails: "+failCounter);
+                System.out.println();
+            }
+}
+
+    public static void classSummary(int[][]array) {
+        int[] failCount = new int[3];
+        int[] passCount = new int[3];
+        int numberOfStudent = 4;
+        int numberOfSubject = 3;
+        int theHighestScore =0;
+        int theLowestScore =MAX_VALUE;
+        int theHighestScorer = 0;
+        int theLowestScorer =0;
+        int inHighestSubject =0;
+        int inLowestSubject=0;
+        int [] graduatingStudentScore = new int[numberOfStudent];
+        int classTotal =0;
+        double classAverage = 0;
+
+        for (int index = 0; index < numberOfSubject; index++) {
+            int highestScore = MIN_VALUE;
+            int lowestScore = MAX_VALUE;
+            for (int item = 0; item < numberOfStudent; item++) {
+                if (array[item][index] > highestScore) {
+                    highestScore = array[item][index];
+                    theHighestScorer = item;
+                } else if (array[item][index] < lowestScore) {
+                    lowestScore = array[item][index];
+                }
+                if (array[item][index] >= 60) {
+                    passCount[index]++;
+                } else if (array[item][index] <= 60) {
+                    failCount[index]++;
+                }if (array[item][index] > theHighestScore){
+                    theHighestScore =array[item][index];
+                    theHighestScorer = item;
+                    inHighestSubject = index;
+                }if (array[item][index]< theLowestScore){
+                    theLowestScore = array[item][index];
+                    theLowestScorer =item;
+                    inLowestSubject = index;
+                }
+                graduatingStudentScore[item] += array[item][index];
+                classTotal+=array[item][index];
+            }
+        }classAverage = (double) classTotal / numberOfStudent;
+            int hardestSubject = 0;
+            int cheapestSubject = 0;
+            int count = 0;
+            int counter = 0;
+            for (int index = 0; index < numberOfSubject; index++) {
+                if (failCount[index] > count) {
+                    count = failCount[index];
+                    hardestSubject = index;
+                }
+                if (passCount[index] > counter) {
+                    counter = passCount[index];
+                    cheapestSubject = index;
+                }
+            }int bestGraduatingScore =0;
+            int worstGraduatingScore =MAX_VALUE;
+            int worstGraduatingStudent =0;
+            int bestGraduatingStudent =0;
+
+        for (int index = 0; index < numberOfStudent; index++) {
+            if (graduatingStudentScore[index] > bestGraduatingScore){
+                bestGraduatingScore = graduatingStudentScore[index];
+                bestGraduatingStudent = index;
+            }if (graduatingStudentScore[index] < worstGraduatingScore){
+                worstGraduatingScore = graduatingStudentScore[index];
+                worstGraduatingStudent = index;
             }
 
         }
-    }
-        return numbers;
-    }
+        String design = "=";
+        String failDesign = "!";
+            String summary = "CLASS SUMMARY";
+            System.out.println("The hardest subject is subject " + (hardestSubject + 1) + " with " + count + " number of failures");
+            System.out.println("The easiest subject is subject " + (cheapestSubject + 1) + " with  " + counter + " number of passes");
+            System.out.println("The overall highest score is scored by student "+ (theHighestScorer+1)+" in subject "+(inHighestSubject+1)+" scoring "+theHighestScore);
+            System.out.println("The overall lowest score is scored by student "+(theLowestScorer+1)+ " in subject "+(inLowestSubject+1)+" scoring "+theLowestScore);
+            System.out.printf("%s%n%n",design.repeat(80));
+            System.out.printf("%50s%n",summary);
+            System.out.println(design.repeat(80));
+            System.out.println("The best graduating student is student "+(bestGraduatingStudent+1)+" scoring "+bestGraduatingScore);
+            System.out.printf("%s%n%n",design.repeat(80));
+            System.out.println(failDesign.repeat(80));
+            System.out.println("The worst graduating student is student "+(worstGraduatingStudent+1)+" scoring "+worstGraduatingScore);
+            System.out.printf("%s%n%n",failDesign.repeat(80));
+            System.out.println(design.repeat(80));
+            System.out.println("The class to total is: "+classTotal);
+            System.out.println("The class average is: "+classAverage);
+            System.out.println(design.repeat(80));
 
-    public static void main(String[] args) {
-    int [] sort = {5,4,8,2,1,5,};
 
-        System.out.println(Arrays.toString(ascendingArray(sort)));
-        //JOptionPane.showMessageDialog(null, "Enter your name", "Information", JOptionPane.INFORMATION_MESSAGE);
-            }
+
+    }
+  public static void main(String[] args) {
+        int [][] array = {{70,69,9},{8,50,6},{6,60,2},{4,70,8}};
+        classSummary(array);
+
+    }
         }
 
 

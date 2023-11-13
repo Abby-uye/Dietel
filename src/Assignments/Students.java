@@ -1,19 +1,26 @@
 package Assignments;
 
 public class Students {
-    private int numberOfStudents;
-    public Students (int numberOfStudents){
-        if (numberOfStudents <= 0){
-            throw new IllegalArgumentException("Number of students must be greater than 0");
-        }
+    private String numberOfStudents;
+    private String numberOfSubjects;
+    public Students (String numberOfStudents,String numberOfSubjects){
+
+        this.numberOfSubjects = numberOfSubjects;
         this.numberOfStudents = numberOfStudents;
+
     }
 
-    public void setNumberOfStudents(int numberOfStudents){
+    public void setNumberOfStudents(String numberOfStudents){
         this.numberOfStudents = numberOfStudents;
     }
-public  int getNumberOfStudents(){
+public String getNumberOfStudents(){
         return numberOfStudents;
 }
+    public void setNumberOfSubjects(String numberOfSubjects){
+        this.numberOfSubjects = numberOfSubjects;
 
+    }
+    public String getNumberOfSubjects() {
+        return numberOfSubjects;
+    }
 }
