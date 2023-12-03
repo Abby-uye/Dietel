@@ -53,12 +53,13 @@ public class BankAccount {
         String amountString = amount.toString();
         return amountString.matches("^\\d+(\\.\\d+)?$");
     }
-
+String forward = "<";
+    String backward = ">";
     @Override
     public String toString() {
-        return String.format("%s%n%s%n Name : %s%n Phone:%s%n Balance: ***** Pin: **** Number %d%n%s",
-                             "Account Details+",
-                "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$", name,phone,number,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        return String.format("%s%n%s%nName : %s%nPhone:%s%nBalance:  %.2f%nPin: **** %nNumber: %d%n%s",
+                             forward.repeat(30),
+                "Account Details", name,phone,balance,number,backward.repeat(30));
     }
 
     public boolean insufficientFunds(BigDecimal amount) {

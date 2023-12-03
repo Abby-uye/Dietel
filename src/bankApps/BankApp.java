@@ -15,28 +15,22 @@ public class BankApp {
     private static String pin = "";
     private static int accountNumber = 0;
     static Bank thisBank = new Bank("Raven");
-    public static BankAccount createAccount(){
-        Scanner userInput = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null,"Enter your  first name");
-        firstName = userInput.nextLine();
-        JOptionPane.showMessageDialog(null,"Enter your last name");
-        lastName = userInput.nextLine();
-        JOptionPane.showMessageDialog(null,"Enter a new pin");
-        pin = userInput.nextLine();
-        JOptionPane.showMessageDialog(null,"Enter your Phone number");
-        phone = userInput.nextLine();
+    public static BankAccount createAccount() throws InvalidAccountNumberException {
+        firstName = JOptionPane.showInputDialog(null,"Enter your  first name");
+        lastName =  JOptionPane.showInputDialog(null,"Enter your last name");
+        pin = JOptionPane.showInputDialog(null,"Enter a new pin");
+        phone = JOptionPane.showInputDialog(null,"Enter your Phone number");
        return thisBank.createAccount(firstName,lastName,pin,phone,balance);
     }
-    public static void mainManu(){
-        Scanner userInput = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null, """
+    public static void mainManu() throws InvalidAccountNumberException {
+
+        String input = JOptionPane.showInputDialog(null, """
                 Hello Ravenite
                To withdraw  Press 1\s
                To Deposit   Press 2
                To Transfer  press 3
                To Check balance press 4
                 """);
-        String input = userInput.nextLine();
         switch (input){
             case "1" -> withdraw();
             case "2" -> deposit();
@@ -47,52 +41,42 @@ public class BankApp {
 
     }
 
-    private static BigDecimal checkBalance() throws InvalidAccountNumberException {
-        Scanner userInput = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null, "Please Enter your pin");
-        pin = userInput.nextLine();
-        JOptionPane.showMessageDialog(null, "Please Enter your Account number");
-        int accountNumber = userInput.nextInt();
-        return thisBank.checkBalance(accountNumber,pin);
+    private static void checkBalance() throws InvalidAccountNumberException {
+        pin = JOptionPane.showInputDialog(null, "Please Enter your pin");
+        accountNumber = Integer.parseInt(JOptionPane.showInputDialog(null, "Please Enter your Account number"));
+        thisBank.checkBalance(accountNumber,pin);
     }
 
     private static void transfer() throws InvalidAccountNumberException {
-        Scanner userInput = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null, "Please Enter your pin");
-        pin = userInput.nextLine();
-        JOptionPane.showMessageDialog(null, "Please enter the amount you want to transfer");
-        BigDecimal amount = userInput.nextBigDecimal();
-        JOptionPane.showMessageDialog(null, "Please Enter your Account number");
-        accountNumber = userInput.nextInt();
-        JOptionPane.showMessageDialog(null, "Please the account number you want to transfer to");
-        int accountNumberToTransferTo = userInput.nextInt();
+        pin = JOptionPane.showInputDialog(null, "Please Enter your pin");
+        String amountInput = JOptionPane.showInputDialog(null, "Please enter the amount you want to transfer");
+        BigDecimal amount = new BigDecimal(amountInput);
+        accountNumber = Integer.parseInt(JOptionPane.showInputDialog(null, "Please Enter your Account number"));
+        int accountNumberToTransferTo = Integer.parseInt(JOptionPane.showInputDialog(null, "Please the account number you want to transfer to"));
         thisBank.transfer(pin,amount,accountNumber,accountNumberToTransferTo);
     }
 
     private static void deposit() throws InvalidAccountNumberException {
-        Scanner userInput = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null, "Please enter the amount you want to deposit");
-        BigDecimal amount = userInput.nextBigDecimal();
-        JOptionPane.showMessageDialog(null, "Please Enter your Account number");
-        accountNumber = userInput.nextInt();
+        String amountInput = JOptionPane.showInputDialog(null, "Please enter the amount you want to deposit");
+        BigDecimal amount = new BigDecimal(amountInput);
+        accountNumber = Integer.parseInt(JOptionPane.showInputDialog(null, "Please Enter your Account number"));
         thisBank.deposit(amount,accountNumber);
+
     }
 
     private static void withdraw() throws InvalidAccountNumberException {
-        Scanner userInput = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null, "Please Enter your pin");
-        pin = userInput.nextLine();
-        JOptionPane.showMessageDialog(null, "Please enter the amount you want to withdraw");
-        BigDecimal amount = userInput.nextBigDecimal();
-        JOptionPane.showMessageDialog(null, "Please Enter your Account number");
-        accountNumber = userInput.nextInt();
+        pin = JOptionPane.showInputDialog(null, "Please Enter your pin");
+        String amountInput = JOptionPane.showInputDialog(null, "Please enter the amount you want to withdraw");
+        BigDecimal amount = new BigDecimal(amountInput);
+        accountNumber = Integer.parseInt(JOptionPane.showInputDialog(null, "Please Enter your Account number"));
        thisBank.withdraw(pin,accountNumber,amount);
     }
 
 
-    public static void main(String[] args) {
-
-
-
+    public static void main(String[] args) throws InvalidAccountNumberException {
+      BankAccount thisAccount =  createAccount();
+        System.out.println(thisAccount.toString());
+        mainManu();
+        System.out.println(thisAccount.toString());
     }
 }

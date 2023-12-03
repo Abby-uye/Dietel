@@ -38,13 +38,11 @@ public class Bank {
         return accountList.get(accountList.size()-1);
     }
     public BankAccount findAccount(int accountNumber) throws InvalidAccountNumberException {
-        if (! isValidAccountNumber(accountNumber))throw new InvalidAccountNumberException("The Account Number You entered is not valid");
-        else {
             for (BankAccount account:accountList) {
                 if (account.getNumber(accountNumber) == accountNumber)
                     return account;
+                else throw new InvalidAccountNumberException("The Account Number You entered is not valid");
             }
-        }
         return null;
     }
 

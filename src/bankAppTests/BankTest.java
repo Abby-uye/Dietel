@@ -55,14 +55,14 @@ class BankTest {
         bliss.withdraw("pin",1,BigDecimal.valueOf(2500));
         assertEquals(BigDecimal.valueOf(1500), bliss.checkBalance(1, "pin"));
     }@Test
-    void testThatThrowsIsufficientFundsExceptionWhenYouTryToWithdrawAmountGreaterThanBalance() throws InsufficientFundsException, InvalidAccountNumberException {
+    void testThatThrowsInsufficientFundsExceptionWhenYouTryToWithdrawAmountGreaterThanBalance() throws InsufficientFundsException, InvalidAccountNumberException {
         Bank bliss = new Bank("bliss");
         BankAccount account1 = bliss.createAccount("Abby", "uye", "pin", "090876", BigDecimal.valueOf(0));
         bliss.deposit(BigDecimal.valueOf(4000), 1);
         assertThrows(InsufficientFundsException.class,()->bliss.withdraw("pin",1,BigDecimal.valueOf(4500)));
     }
     @Test
-    void testThatCanTransferFromoneAccountToAnotherAccount() throws InvalidAccountNumberException {
+    void testThatCanTransferFromOneAccountToAnotherAccount() throws InvalidAccountNumberException {
         Bank bliss = new Bank("bliss");
         BankAccount account1 = bliss.createAccount("Abby", "uye", "pin", "090876", BigDecimal.valueOf(0));
         BankAccount account2 = bliss.createAccount("Uye","Abby","ok","090876", BigDecimal.valueOf(0));
@@ -78,7 +78,7 @@ class BankTest {
         BankAccount account2 = bliss.createAccount("A", "uy", "p", "0908", BigDecimal.valueOf(0));
         BankAccount account3 = bliss.createAccount("Abby", "uye", "pin", "090876", BigDecimal.valueOf(0));
         bliss.deposit(BigDecimal.valueOf(1000),1);
-//        bliss.removeAccount(1,"p");
+        //bliss.removeAccount(1,"p");
         assertEquals(BigDecimal.valueOf(1000),bliss.checkBalance(1,"pi"));
 
     }
