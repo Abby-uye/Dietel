@@ -32,6 +32,7 @@ public class StudentGradeMain {
             score.display();
             System.out.println(SavingDisplay.displayDesign());
             System.out.println(SavingDisplay.displayDesign());
+            score.displaySubjectSummary();
             score.classSummary();
         }
 

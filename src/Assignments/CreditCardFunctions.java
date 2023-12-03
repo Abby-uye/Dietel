@@ -3,7 +3,6 @@ package Assignments;
 public class CreditCardFunctions {
     public static void main(String[] args) {
         int [] numbers = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6};
-//        creditCardNumber(numbers);
     }
 int [] cardNumbers ={};
    public static String cardValidation(String cardNumbers){

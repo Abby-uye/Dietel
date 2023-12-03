@@ -1,9 +1,9 @@
 package tdd;
 
-public class Account {
+public class Account1 {
     private int balance;
 
-    public Account(int balance) {
+    public Account1(int balance) {
         this.balance = balance;
     }
 

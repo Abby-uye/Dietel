@@ -54,8 +54,13 @@ public class Scores extends Students {
                 while (!scores.matches("\\d+")) {
                     System.out.println("Invalid input. Please enter a valid score for Student " + (student + 1) + " and subject " + (subject + 1));
                     scores = input.nextLine();
+                } int score = Integer.parseInt(scores);
+                while (!(score >=0 && score <=100  )) {
+                    System.out.println("Invalid input. Please enter a valid score for Student " + (student + 1) + " and subject " + (subject + 1));
+                    scores = input.nextLine();
+                    score = Integer.parseInt(scores);
                 }
-                int score = Integer.parseInt(scores);
+
                 allSubjects[student][subject] += score;
             }
         }
@@ -133,37 +138,45 @@ public class Scores extends Students {
     public void displaySubjectSummary() {
         System.out.println("SUBJECT SUMMARY");
         for (int index = 0; index < Integer.parseInt(super.getNumberOfSubjects()); index++) {
-            System.out.println("Subject " + (index + 1));
             int highestScore = MIN_VALUE;
             int lowestScore = MAX_VALUE;
             int total = 0;
             double average = 0;
-            int passCount = 0;
-            int failCount = 0;
+            int passCounter =0;
+            int failCounter =0;
+            int highestScoringStudent=0;
+            int lowestScoringStudent =0;
             for (int item = 0; item < Integer.parseInt(super.getNumberOfStudents()); item++) {
-                if (allSubjects[item][index] > highestScore) {
+                if (allSubjects[item][index] > highestScore){
                     highestScore = allSubjects[item][index];
-                } else if (allSubjects[item][index] < lowestScore) {
+                    highestScoringStudent=item;
+                } else if (allSubjects[item][index]<lowestScore) {
                     lowestScore = allSubjects[item][index];
-                }
-                if (allSubjects[item][index] > 60) {
-                    passCount++;
-                } else if (allSubjects[item][index] < 60) {
-                    failCount++;
+                    lowestScoringStudent =item;
+                }if(allSubjects[item][index] >= 60) {
+                    passCounter++;
+
+                } else if (allSubjects[item][index]<=60) {
+                    failCounter++;
 
                 }
-                total += allSubjects[item][index];
-                average = (double) total / Integer.parseInt(super.getNumberOfStudents());
+                total+=allSubjects[item][index];
+                average = (double) total /Integer.parseInt(super.getNumberOfStudents());
+
             }
-            System.out.println("The highest scoring student  for subject " + (index + 1) + " is: " + highestScore);
-            System.out.println("The lowest scoring student  for subject " + (index + 1) + " is: " + lowestScore);
-            System.out.println("Total score is: " + total);
-            System.out.printf("Average score is: %.1f", average);
-            System.out.println("Number of passes: " + passCount);
-            System.out.println("Number of fails: " + failCount);
+
+            System.out.println("The highest scoring student  for subject "+ (index+1)+" is: student "+(highestScoringStudent+1)+" scoring "+highestScore);
+            System.out.println("The lowest scoring student  for subject "+(index+1)+" is: student "+(lowestScoringStudent+1)+" scoring "+lowestScore);
+            System.out.println("Total score is: " +total);
+            System.out.println("Average score is: "+average);
+            System.out.println("Number of passes: "+passCounter);
+            System.out.println("Number of fails: "+failCounter);
             System.out.println();
         }
-    }
+            }
+
+
+
 
 public  void classSummary() {
     int[] failCount = new int[Integer.parseInt(super.getNumberOfSubjects())];

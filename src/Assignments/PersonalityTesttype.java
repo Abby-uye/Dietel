@@ -8,7 +8,7 @@ public class PersonalityTesttype {
      public  static String userName  = "";
 
     public static String[] [] aAndbQuestions() {
-        //package Assignments;
+
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your name");
         userName = input.nextLine();
@@ -93,6 +93,7 @@ public class PersonalityTesttype {
         String [] personalityTypeA = {"E", "S",  "T",  "J"};
         String [] personalityTypeB = {"I", "N", "F", "P"};
         System.out.println("Hello "+ userName + " You Selected");
+        System.out.println();
         for (int index = 0; index < 4; index++) {
             int bCount = 0;
             int aCount = 0;
@@ -117,344 +118,136 @@ public class PersonalityTesttype {
     private static void displayPersonalityResult(String personalType) {
         switch (personalType){
             case "ISTJ" -> {
-                System.out.println("Key ISTJ Characteristics");
+                System.out.println("ISTJ - The Duty Fulfiller");
                 System.out.println("""
-                        Calm
-                        Concerned with rules
-                        Decisive
-                        Honest
-                        Independent
-                        Insensitive
-                        Level-headed
-                        Stubborn
-                        Straight-forward
-                        Reserved
-                        Responsible""");
-                System.out.println("ISTJ Strengths and Weaknesses");
-                System.out.println("Strentghs");
-
-                System.out.println("""
-                        ISTJs are planners: They like to carefully plan things out well in advance. 
-                        They enjoy an orderly life. They like things to be well-organized and pay great attention to detail.
-                        When things are in disarray, people with this personality type may find themselves unable to rest until they have set everything straight and the work has been completed.
-                        
-                        ISTJs are both responsible and realistic:
-                        They take a logical approach to achieving their goals and completing projects and can work steadily toward accomplishing these tasks. 
-                        They can ignore distractions to focus on the task at hand and are often described as dependable and trustworthy.
-                        
-                        ISTJs also place a great deal of emphasis on traditions and laws: 
-                        They prefer to follow rules and procedures that have previously been established. 
-                        In some cases, ISTJs can seem rigid and unyielding in their desire to maintain structure.""");
-
-                System.out.println("Weaknesses");
-
-                System.out.println("""
-                        ISTJs can be stubborn: Their love of order and rules means they can sometimes be stubborn and stuck in their ways. 
-                        It also means that they resist trying new things or looking for alternative solutions to problems.
-                        
-                        ISTJs can seem insensitive: While ISTJs are loyal and protective, their tendency to be direct and honest sometimes leads to hurt feelings. 
-                        Others may feel that they are insensitive or even cold.
-                        
-                        ISTJ tend to blame themselves: Because they are responsible and hardworking, they also tend to take on unwarranted self-blame when things go wrong""");
-
-                System.out.println("Personal Relationships");
-                System.out.println("""
-                        STJs prefer spending time alone or with small groups of close friends. 
-                        People with this personality type are usually very loyal and devoted to family and friends 
-                        but may struggle to understand their own emotions and the feelings of others. 
-                        They can be quite reserved and sometimes fail to pick up on the emotional signals given by other people. 
-                        However, once they are close to a person and develop an understanding of that person's feelings and needs, 
-                        they will expend a great deal of effort toward supporting those needs.""");
-
-                System.out.println("Career Paths");
-                System.out.println("""
-                        Because of this need for order, they tend to do better in learning and work environments that have clearly defined schedules, 
-                        clear-cut assignments, and a strong focus on the task at hand. When learning new things, 
-                        ISTJs do best when the material is something they view as useful with real-world applications. 
-                        Concrete, factual information appeals to ISTJs, while theoretical and abstract information has little value unless they can see some type of practical use for it.
-                        While they may exert tremendous energy into projects they see as valuable, they will avoid wasting time and energy on things that they view as useless or unpractical.
-                                               
-                        ISTJs tend to do well in careers that require order, structure, and perseverance.
-                         Jobs that involve dealing with concrete facts and figures (accounting, library science, computer programming, etc.) are all good options. 
-                         Jobs that require accuracy, respect for rules and stability often appeal to those with an ISTJ """);
-
-
-                System.out.println("Tips for Interacting With ISTJs");
-                System.out.println("Friendships");
-                System.out.println("""
-                       ISTJs tend to get along best with friends who are similar to themselves.
-                       While they tend to be a bit serious and by the book, they do like to have fun. 
-                       They might not be willing to jump into new things, but you can be a great friend by helping them pursue hobbies and activities that they enjoy. """);
-
-                System.out.println("Parenting");
-                System.out.println("""
-                        ISTJ parents tend to be quite focused on tradition and are good at providing security and stability to their children. 
-                        Children of ISTJ parents often find that their parents will treat them with care and respect and that they also expect the same treatment in return.
-                                                
-                        Parents of ISTJ children will find that providing consistency can help their children feel more secure. 
-                        Sticking to routines, introducing change slowly, and giving them time to adjust to new situations are all ways to help an ISTJ chil""");
-
-                System.out.println("Relationship");
-                System.out.println("""
-                        While people of any personality type can be compatible, ISTJ tends to be most compatible with people who share their interests and characteristics.
-                        Some other types that may be most compatible include other ISTJs and ISTPs, ISFJs, or ESTJs.
-                                               
-                        While ISTJs may experience deep feelings, they often struggle to show that side of themselves in romantic relationships.
-                        You can be an understanding partner by not expecting them to bare their soul to you right off the bat. 
-                        Sometimes it may seem that your partner is not considering your feelings, 
-                        but you can help them see your side by rationally presenting facts and logical explanations for your side of the argument. """);
+                        Serious and quiet, interested in security and peaceful living. Extremely thorough, responsible, and dependable.
+                        Well-developed powers of concentration. Usually interested in supporting and promoting traditions and establishments.
+                        Well-organized and hard working, they work steadily towards identified goals.
+                        They can usually accomplish any task once they have set their mind to it.""");
             }
-                case "ISTP" ->{
-                    System.out.println("ISTP: The Crafter (Introverted, Sensing, Thinking, Perceiving");
-
-                    System.out.println("Key Characteristics");
-
-                    System.out.println("""
-                            Goal-directed: People with an ISTP personality are results-oriented. When there is a problem,
-                            they want to quickly understand the underlying cause and implement some type of solution.
-                            Open to new experiences: ISTPs enjoy new experiences and may often engage in thrill-seeking or risk-taking behaviors.
-                            They often engage in risky or fast-paced hobbies such as motorcycling, hang gliding, bungee jumping, surfing, or ice hockey. In some cases,                          
-                            they may seek out adventure by choosing careers in areas such as racing, flying, or firefighting.
-                            
-                            Objective: They prefer to make judgments based on objective criteria rather than personal beliefs or values.
-                            Reserved but even-tempered: ISTPs are often described as quiet but with an easygoing attitude towards others.
-                            They can be talkative at work or in settings where they have a great deal in common with others.
-                            
-                            Emotionally detached: ISTPs are not well attuned to the emotional states of others, and they can sometimes be seen as cold, unfeeling, or insensitive.
-                            They also distance themselves from their own emotions, ignoring their feelings until they become overwhelming.
-                           
-                            Level-headed: One common misconception about ISTPs is that they are the stoic, silent type.
-                            While they tend to be reserved, this does not mean they do not experience strong emotions.
-                            Instead, they are good at keeping a cool head, maintaining objectivity, and coping with crises.""");
-
-
-                    System.out.println("Career Paths for an ISTP");
-
-                    System.out.println("""
-                         ISTPs tend to be curious and even adventurous, but they also have a strong need to be alone at times.
-                         You can be a great friend by asking them to get out and pursue new things, but be ready to respect their need for peace and quiet when they are not feeling up to going out.
-                         Because ISTPs are introverted, they often do well in jobs that require working alone.
-                         ISTPs tend to dislike too much structure and do well in careers where they have a lot of freedom and autonomy.
-                         Because they are very logical, they often enjoy work that involves reasoning and hands-on experience.
-                         In particular, ISTPs like doing things that have practical, real-world applications.""");
-
-                    System.out.println("Strengths");
-
-                    System.out.println("""
-                            Logical
-                                                        
-                            Learns by experience
-                                                        
-                            Action-oriented
-                                                        
-                            Realistic and practical
-                                                        
-                            Enjoys new things
-                                                        
-                            Self-confident and easygoing""");
-
-                    System.out.println("Weaknesses");
-
-                    System.out.println("""
-                            Difficult to get to know
-                                                        
-                            Insensitive
-                                                        
-                            Grows bored easily
-                                                        
-                            Risk-taker
-                                                        
-                            Does not like commitment""");
-
-                    System.out.println("Tips for Interacting With ISTPs");
-                    System.out.println("Friendships");
-                    System.out.println("""
-                            ISTPs tend to be curious and even adventurous, but they also have a strong need to be alone at times.
-                            You can be a great friend by asking them to get out and pursue new things, 
-                            but be ready to respect their need for peace and quiet when they are not feeling up to going out.""");
-
-                    System.out.println("Parenting");
-                    System.out.println("""
-                                      If you are a parent to an ISTP child, you are probably well aware of their independent, adventurous nature.
-                                      You can encourage their confidence by providing safe and healthy opportunities for them to explore things on their own.
-                                      Provide rules and guidance, but be careful not to hover. Give your child plenty of hands-on learning, outdoor adventures,
-                                       
-                                       and opportunities to experiment with how things work.""");
-
-                    System.out.println("Relationship");
-                    System.out.println("""
-                            Because ISTPs live so strongly in the present moment, long-term commitments can be a real challenge.
-                             You can strengthen your relationship with your ISTP partner by being willing to take things day to day and by respecting their fierce need for independence.""");
+            case "ISTP"->{
+                System.out.println("ISTP - The Mechanic");
+                System.out.println("""
+                        Quiet and reserved, interested in how and why things work.
+                        Excellent skills with mechanical things. Risk-takers who live in the current moment.
+                        Usually interested in and talented at extreme sports. Uncomplicated in their desires.
+                        Loyal to their peers and to their internal value systems, but not overly concerned with respecting laws and rules if they get in the way of getting something done.
+                        Detached and analytical, they excel at finding solutions to practical problems.""");
             }
-                    case "ISFJ"->{
-                        System.out.println("ISFJ: Introverted, Sensing, Feeling, Judging");
+            case "ISFJ"->{
+                System.out.println("ISFJ - The Nurturer");
 
-                        System.out.println("Key ISFJ Characteristics");
-
-                        System.out.println("""
-                                Caring
-                                Compassionate
-                                Dependable
-                                Industrious
-                                Kind-hearted
-                                Loyal
-                                Organized
-                                Practical
-                                Protective
-                                Sensitive
-                                Warm""");
-
-                        System.out.println("""
-                                They Tend to Repress Their Emotions
-                                
-                                One challenge that ISFJs have to grapple with is their tendency to repress or ignore emotions. 
-                                Those with this personality type are particularly well-tuned into the emotions and feelings of others.
-                                                                
-                                While ISFJs are good at understanding their own emotions, they often struggle to express them. Rather than share their feelings, 
-                                they may bottle them up, sometimes to the point that negative feelings toward other people can result.
-                                                                
-                                When dealing with life struggles, such as illness or the death of a loved one, 
-                                they may keep quiet about what they are experiencing to avoid burdening others with their troubles.
-                                                                
-                                They Are Practical
-                                
-                                An ISFJ practicality can be another key strength, but it can also be a weakness when it limits their ability to consider new ideas.
-                                People with this personality prefer concrete facts over abstract theories. As a result, they tend to learn best by doing.
-                                                                
-                                This also means that they usually value learning for its practical applications.
-                                They also tend to become more interested in new things when they can see and appreciate how they might solve a real-world problem.
-                                                                
-                                They Are Creatures of Habit
-                                
-                                ISFJs enjoy structure and strive to maintain this order in all areas of their lives.
-                                They thrive in highly structured and consistent environments where they are given step-by-step instructions and clear expectations.
-                                                                
-                                Their preference to keep things the way they are rather than change. But this does not mean ISFJs aren't adaptable.
-                                 They simply prefer to have time to think about and prepare for big changes.""");
-
-                        System.out.println("Strengths");
-                        System.out.println("""
-                                Reliable
-                                                               
-                                Practical
-                                                               
-                                Sensitive
-                                                               
-                                Eye for detail""");
-                        System.out.println("Weaknesses");
-
-                        System.out.println("""
-                                Dislikes abstract concepts
-                                                                
-                                Avoids confrontation
-                                                                
-                                Dislikes change
-                                                                
-                                Neglects own needs""");
-
-                        System.out.println("ISFJ Personal Relationships");
-
-                        System.out.println("""
-                                Because they are quiet, people sometimes misinterpret this as standoffish behavior. 
-                                However, ISFJs are compassionate and caring toward others,
-                                often working to secure the safety and well-being of other people without asking for thanks or anything in return.
-                                                                
-                                ISFJs are often described as kind, reliable, and trustworthy.
-                                                                
-                                Because they are hard-working, dependable, and rarely seek accolades for their own accomplishments,
-                                 ISFJs are sometimes taken for granted by those around them. In some cases, people might even try to take advantage of this reliability.
-                                                                                                                                
-                                ISFJs tend to have a small group of very close friends.
-                                While they may be quiet and reserved around people they don’t know well,
-                                they are more likely to "let loose" when they are around these close confidants.
-                                They place a high value on these close friendships and are always willing to support and care for the people to whom they are close.""");
-
-                        System.out.println("Career Paths for ISFJs");
-
-                        System.out.println("""
-                                ISFJs have many characteristics that make them well-suited to particular careers.
-                                Because they are so attuned to the feelings of others, jobs in mental health or the healthcare industry are a good fit.
-                                                                
-                                They are also meticulous and orderly, making them suited to jobs that involve planning, structure, or attention to detail.
-                                 Their commitment to their work, reliability, and ability to work independently make them attractive to a wide variety of employers.
-                                                                
-                                Because of their solid people skills and desire to create order, they often do well in management or administrative roles.
-                                 They excel at coming up with plans and helping other people work together to achieve a common goal.""");
-
-                        System.out.println("Tips for Interacting With ISFJs");
-
-                        System.out.println("Friendships");
-
-                        System.out.println("""
-                                If you are friends with an ISFJ, you are probably already aware that they tend to be warm and selfless.
-                                Even though they are quite social for introverts, they are not always good at sharing their own feelings.
-                                Asking them how they are doing and being willing to talk can help them to open up.
-                                                                
-                                You can help be a good friend by paying attention to their needs.
-                                Take the time to see what they might need you to do for them.""");
-
-                        System.out.println("Parenting");
-
-                        System.out.println("""
-                                ISFJs are natural caregivers and are very nurturing toward their children.
-                                They are good at giving their kids structure and order, but sometimes have a difficult time enforcing discipline.
-                                                                
-                                If you are the parent of an ISFJ child, be aware of your child's need to have time alone.
-                                Also, be aware that your child may be willing to give up things that are important to them to make other people happy.
-                                Encourage them to pursue their interests and goals and remind them that meeting their own needs is important as well.""");
-
-                        System.out.println("Relationships");
-
-                        System.out.println("""
-                                ISFJs are very faithful to their partners and approach relationships with an intensity of emotion and great devotion.
-                                While they have strong feelings, they are not always good at expressing them.
-                                Who should ISFJs marry or date? In terms of compatibility,
-                                ISFJs often get along with with other types that share the sensing function, including ISTJs, ISFPs, and ESFPs.
-                                                                
-                                Your ISFJ partner may often be focused on taking care of your needs, but you should take care to reciprocate these actions.
-                                Showing your partner that you appreciate them can help them to feel more satisfied.""");
-
-
-
-
-
-
+                System.out.println("""
+                        Quiet, kind, and conscientious. Can be depended on to follow through.
+                        Usually puts the needs of others above their own needs. Stable and practical,
+                        they value security and traditions. Well-developed sense of space and function.
+                        Rich inner world of observations about people. Extremely perceptive of other's feelings.
+                        Interested in serving others.""");
             }
 
-
-
+        case "ISFP"->{
+            System.out.println("ISFP - The Artist");
+            System.out.println("""
+                    Quiet, serious, sensitive and kind. Do not like conflict, and not likely to do things to generate conflict.
+                    Loyal and faithful. Extremely well-developed senses, and aesthetic appreciation for beauty.
+                    Not interested in leading or controlling others. Flexible and open-minded. Likely to be original and creative. Enjoy the present moment.""");
 
         }
+        case "INFJ"->{
+            System.out.println("INFJ - The Protector");
+            System.out.println("""
+                    Quietly forceful, original, and sensitive. Tend to stick to things until they are done. Extremely intuitive about people, and concerned for their feelings.
+                    Well-developed value systems which they strictly adhere to. Well-respected for their perserverence in doing the right thing.
+                    Likely to be individualistic, rather than leading or following.""");
+        }
+       case "INFP"->{
+           System.out.println("INFP - The Idealist");
+           System.out.println("""
+                   Quiet, reflective, and idealistic. Interested in serving humanity. Well-developed value system, which they strive to live in accordance with. Extremely loyal.
+                   Adaptable and laid-back unless a strongly-held value is threatened. Usually talented writers. Mentally quick, and able to see possibilities.
+                   Interested in understanding and helping people.""");
+       }
+       case "INTJ"->{
+           System.out.println("INTJ - The Scientist");
+           System.out.println("""
+                   Independent, original, analytical, and determined. Have an exceptional ability to turn theories into solid plans of action.
+                   Highly value knowledge, competence, and structure. Driven to derive meaning from their visions.
+                   Long-range thinkers. Have very high standards for their performance, and the performance of others.
+                   Natural leaders, but will follow if they trust existing leaders.""");
+       }
+        case "INTP"->{
+            System.out.println("INTP - The Thinker");
+            System.out.println("""
+                    Logical, original, creative thinkers. Can become very excited about theories and ideas.
+                    Exceptionally capable and driven to turn theories into clear understandings.
+                    Highly value knowledge, competence and logic. Quiet and reserved, hard to get to know well.
+                    Individualistic, having no interest in leading or following others.""");
+        }
+        case "ESTP"->{
+            System.out.println("ESTP - The Doer");
+            System.out.println("""
+                    Friendly, adaptable, action-oriented. "Doers" who are focused on immediate results.
+                    Living in the here-and-now, they're risk-takers who live fast-paced lifestyles. Impatient with long explanations.
+                    Extremely loyal to their peers, but not usually respectful of laws and rules if they get in the way of getting things done. Great people skills.""");
+        }
+        case "ESTJ"->{
+            System.out.println("ESTJ - The Guardian");
+            System.out.println("""
+                    Practical, traditional, and organized. Likely to be athletic.
+                    Not interested in theory or abstraction unless they see the practical application.
+                    Have clear visions of the way things should be.
+                    Loyal and hard-working. Like to be in charge.
+                    Exceptionally capable in organizing and running activities. "Good citizens" who value security and peaceful living.""");
+            }
+            case "ESFP"->{
+                System.out.println("ESFP - The Performer");
+                System.out.println("""
+                        People-oriented and fun-loving, they make things more fun for others by their enjoyment. Living for the moment, they love new experiences.
+                        They dislike theory and impersonal analysis. Interested in serving others. Likely to be the center of attention in social situations.
+                        Well-developed common sense and practical ability.""");
+            }
+        case "ESFJ"->{
+            System.out.println("ESFJ - The Caregiver");
+            System.out.println("""
+                    Warm-hearted, popular, and conscientious. Tend to put the needs of others over their own needs.
+                    Feel strong sense of responsibility and duty. Value traditions and security.
+                    Interested in serving others. Need positive reinforcement to feel good about themselves.
+                    Well-developed sense of space and function.""");
+        }
+        case "ENFP"->{
+            System.out.println("ENFP - The Inspirer");
+            System.out.println("""
+                    Enthusiastic, idealistic, and creative. Able to do almost anything that interests them. Great people skills.
+                    Need to live life in accordance with their inner values.
+                    Excited by new ideas, but bored with details. Open-minded and flexible, with a broad range of interests and abilities.""");
+        }
+        case "ENFJ"->{
+            System.out.println("ENFJ - The Giver");
+            System.out.println("""
+                    Popular and sensitive, with outstanding people skills.
+                    Externally focused, with real concern for how others think and feel. Usually dislike being alone.
+                    They see everything from the human angle, and dislike impersonal analysis. Very effective at managing people issues, and leading group discussions.
+                    Interested in serving others, and probably place the needs of others over their own needs.""");
+        }
+        case "ENTP"->{
+            System.out.println("ENTP - The Visionary");
+            System.out.println("""
+                    Creative, resourceful, and intellectually quick. Good at a broad range of things. Enjoy debating issues, and may be into "one-up-manship".
+                     They get very excited about new ideas and projects, but may neglect the more routine aspects of life.
+                    Generally outspoken and assertive. They enjoy people and are stimulating company. Excellent ability to understand concepts and apply logic to find solutions.""");
+        }
+        case "ENTJ"->{
+            System.out.println("ENTJ - The Executive");
+            System.out.println("""
+                    Assertive and outspoken - they are driven to lead.
+                    Excellent ability to understand difficult organizational problems and create solid solutions.
+                    Intelligent and well-informed, they usually excel at public speaking.
+                    They value knowledge and competence, and usually have little patience with inefficiency or disorganization.""");
+        }
+        }
     }
-
-
-//                if (userInputStorage[index][item].equalsIgnoreCase("A")) {
-//                    aCount
-//                    ++;
-//                } else if (userInputStorage[index][item].equalsIgnoreCase("B")) {
-//                    bCount++;
-//                }
-//                if (Objects.equals(answers[item], "A")) {
-//                    aCount++;
-//                } else {
-//                    bCount++;
-//                }
-//            }
-//        }
-//        if (aCount > bCount) {
-//            typeChecker = "Extroverted";
-//        } else if (bCount > aCount) {
-//            typeChecker = "introverted";
-//
-//        }
-//        System.out.println(Arrays.toString(answers));
-//
-//        return typeChecker;
-
-
 
     public static void main(String[] args) {
         print_selected_questions();
     }
 }
-//}

@@ -166,102 +166,100 @@ public class PlayGround {
             }
 }
 
-    public static void classSummary(int[][]array) {
-        int[] failCount = new int[3];
-        int[] passCount = new int[3];
-        int numberOfStudent = 4;
-        int numberOfSubject = 3;
-        int theHighestScore =0;
-        int theLowestScore =MAX_VALUE;
-        int theHighestScorer = 0;
-        int theLowestScorer =0;
-        int inHighestSubject =0;
-        int inLowestSubject=0;
-        int [] graduatingStudentScore = new int[numberOfStudent];
-        int classTotal =0;
-        double classAverage = 0;
-
-        for (int index = 0; index < numberOfSubject; index++) {
-            int highestScore = MIN_VALUE;
-            int lowestScore = MAX_VALUE;
-            for (int item = 0; item < numberOfStudent; item++) {
-                if (array[item][index] > highestScore) {
-                    highestScore = array[item][index];
-                    theHighestScorer = item;
-                } else if (array[item][index] < lowestScore) {
-                    lowestScore = array[item][index];
-                }
-                if (array[item][index] >= 60) {
-                    passCount[index]++;
-                } else if (array[item][index] <= 60) {
-                    failCount[index]++;
-                }if (array[item][index] > theHighestScore){
-                    theHighestScore =array[item][index];
-                    theHighestScorer = item;
-                    inHighestSubject = index;
-                }if (array[item][index]< theLowestScore){
-                    theLowestScore = array[item][index];
-                    theLowestScorer =item;
-                    inLowestSubject = index;
-                }
-                graduatingStudentScore[item] += array[item][index];
-                classTotal+=array[item][index];
-            }
-        }classAverage = (double) classTotal / numberOfStudent;
-            int hardestSubject = 0;
-            int cheapestSubject = 0;
-            int count = 0;
-            int counter = 0;
-            for (int index = 0; index < numberOfSubject; index++) {
-                if (failCount[index] > count) {
-                    count = failCount[index];
-                    hardestSubject = index;
-                }
-                if (passCount[index] > counter) {
-                    counter = passCount[index];
-                    cheapestSubject = index;
-                }
-            }int bestGraduatingScore =0;
-            int worstGraduatingScore =MAX_VALUE;
-            int worstGraduatingStudent =0;
-            int bestGraduatingStudent =0;
-
-        for (int index = 0; index < numberOfStudent; index++) {
-            if (graduatingStudentScore[index] > bestGraduatingScore){
-                bestGraduatingScore = graduatingStudentScore[index];
-                bestGraduatingStudent = index;
-            }if (graduatingStudentScore[index] < worstGraduatingScore){
-                worstGraduatingScore = graduatingStudentScore[index];
-                worstGraduatingStudent = index;
-            }
-
-        }
-        String design = "=";
-        String failDesign = "!";
-            String summary = "CLASS SUMMARY";
-            System.out.println("The hardest subject is subject " + (hardestSubject + 1) + " with " + count + " number of failures");
-            System.out.println("The easiest subject is subject " + (cheapestSubject + 1) + " with  " + counter + " number of passes");
-            System.out.println("The overall highest score is scored by student "+ (theHighestScorer+1)+" in subject "+(inHighestSubject+1)+" scoring "+theHighestScore);
-            System.out.println("The overall lowest score is scored by student "+(theLowestScorer+1)+ " in subject "+(inLowestSubject+1)+" scoring "+theLowestScore);
-            System.out.printf("%s%n%n",design.repeat(80));
-            System.out.printf("%50s%n",summary);
-            System.out.println(design.repeat(80));
-            System.out.println("The best graduating student is student "+(bestGraduatingStudent+1)+" scoring "+bestGraduatingScore);
-            System.out.printf("%s%n%n",design.repeat(80));
-            System.out.println(failDesign.repeat(80));
-            System.out.println("The worst graduating student is student "+(worstGraduatingStudent+1)+" scoring "+worstGraduatingScore);
-            System.out.printf("%s%n%n",failDesign.repeat(80));
-            System.out.println(design.repeat(80));
-            System.out.println("The class to total is: "+classTotal);
-            System.out.println("The class average is: "+classAverage);
-            System.out.println(design.repeat(80));
-
-
-
-    }
+    //    public static void classSummary(int[][]array) {
+    //        int[] failCount = new int[3];
+    //        int[] passCount = new int[3];
+    //        int numberOfStudent = 4;
+    //        int numberOfSubject = 3;
+    //        int theHighestScore =0;
+    //        int theLowestScore =MAX_VALUE;
+    //        int theHighestScorer = 0;
+    //        int theLowestScorer =0;
+    //        int inHighestSubject =0;
+    //        int inLowestSubject=0;
+    //        int [] graduatingStudentScore = new int[numberOfStudent];
+    //        int classTotal =0;
+    //        double classAverage = 0;
+    //
+    //        for (int index = 0; index < numberOfSubject; index++) {
+    //            int highestScore = MIN_VALUE;
+    //            int lowestScore = MAX_VALUE;
+    //            for (int item = 0; item < numberOfStudent; item++) {
+    //                if (array[item][index] > highestScore) {
+    //                    highestScore = array[item][index];
+    //                    theHighestScorer = item;
+    //                } else if (array[item][index] < lowestScore) {
+    //                    lowestScore = array[item][index];
+    //                }
+    //                if (array[item][index] >= 60) {
+    //                    passCount[index]++;
+    //                } else if (array[item][index] <= 60) {
+    //                    failCount[index]++;
+    //                }if (array[item][index] > theHighestScore){
+    //                    theHighestScore =array[item][index];
+    //                    theHighestScorer = item;
+    //                    inHighestSubject = index;
+    //                }if (array[item][index]< theLowestScore){
+    //                    theLowestScore = array[item][index];
+    //                    theLowestScorer =item;
+    //                    inLowestSubject = index;
+    //                }
+    //                graduatingStudentScore[item] += array[item][index];
+    //                classTotal+=array[item][index];
+    //            }
+    //        }classAverage = (double) classTotal / numberOfStudent;
+    //            int hardestSubject = 0;
+    //            int cheapestSubject = 0;
+    //            int count = 0;
+    //            int counter = 0;
+    //            for (int index = 0; index < numberOfSubject; index++) {
+    //                if (failCount[index] > count) {
+    //                    count = failCount[index];
+    //                    hardestSubject = index;
+    //                }
+    //                if (passCount[index] > counter) {
+    //                    counter = passCount[index];
+    //                    cheapestSubject = index;
+    //                }
+    //            }int bestGraduatingScore =0;
+    //            int worstGraduatingScore =MAX_VALUE;
+    //            int worstGraduatingStudent =0;
+    //            int bestGraduatingStudent =0;
+    //
+    //        for (int index = 0; index < numberOfStudent; index++) {
+    //            if (graduatingStudentScore[index] > bestGraduatingScore){
+    //                bestGraduatingScore = graduatingStudentScore[index];
+    //                bestGraduatingStudent = index;
+    //            }if (graduatingStudentScore[index] < worstGraduatingScore){
+    //                worstGraduatingScore = graduatingStudentScore[index];
+    //                worstGraduatingStudent = index;
+    //            }
+    //
+    //        }
+    //        String design = "=";
+    //        String failDesign = "!";
+    //            String summary = "CLASS SUMMARY";
+    //            System.out.println("The hardest subject is subject " + (hardestSubject + 1) + " with " + count + " number of failures");
+    //            System.out.println("The easiest subject is subject " + (cheapestSubject + 1) + " with  " + counter + " number of passes");
+    //            System.out.println("The overall highest score is scored by student "+ (theHighestScorer+1)+" in subject "+(inHighestSubject+1)+" scoring "+theHighestScore);
+    //            System.out.println("The overall lowest score is scored by student "+(theLowestScorer+1)+ " in subject "+(inLowestSubject+1)+" scoring "+theLowestScore);
+    //            System.out.printf("%s%n%n",design.repeat(80));
+    //            System.out.printf("%50s%n",summary);
+    //            System.out.println(design.repeat(80));
+    //            System.out.println("The best graduating student is student "+(bestGraduatingStudent+1)+" scoring "+bestGraduatingScore);
+    //            System.out.printf("%s%n%n",design.repeat(80));
+    //            System.out.println(failDesign.repeat(80));
+    //            System.out.println("The worst graduating student is student "+(worstGraduatingStudent+1)+" scoring "+worstGraduatingScore);
+    //            System.out.printf("%s%n%n",failDesign.repeat(80));
+    //            System.out.println(design.repeat(80));
+    //            System.out.println("The class to total is: "+classTotal);
+    //            System.out.println("The class average is: "+classAverage);
+    //            System.out.println(design.repeat(80));
+    //
+    //
+    //
+    //    }
   public static void main(String[] args) {
-        int [][] array = {{70,69,9},{8,50,6},{6,60,2},{4,70,8}};
-        classSummary(array);
 
     }
         }

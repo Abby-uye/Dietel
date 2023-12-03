@@ -5,8 +5,8 @@ import static Assignments.PizzaFunction.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PizzaFunctionTdd {
-    @Test
-    void testThatCanCollectBoxSize() {
+
+    @Test void testThatCanCollectBoxSize() {
         String size = "Medium";
         String actual = boxSizes(size);
         String expected = "Medium";
@@ -14,8 +14,7 @@ public class PizzaFunctionTdd {
 
     }
 
-    @Test
-    void testThatCanCollectMediumBoxSize() {
+    @Test void testThatCanCollectMediumBoxSize() {
         int number = 2;
         int actual = superHungry(number);
         int expected = 2;
@@ -59,15 +58,20 @@ public class PizzaFunctionTdd {
     void testThatCanCalculatTheNumberOfSmallBoxesThatTheCustomerNeedsToBuyToBuy(){
         assertEquals(2, calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(0,4,0),10));
     }
+
+    private void buyBeans(){
+        buyBeans();
+    }
 @Test
     void testThatCanCalculateThatNumberOfLargestBoxesContainNumberOfSlices(){
+        buyBeans();
         assertEquals(30, calculateLargestBoxesContainTotalNumberOfSlices(calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(2,4,1),10)));
 }
     @ Test
     void testThatCanCalculateNumberOfLargestBoxToRecommendToCustomerToPurchase(){
         assertEquals(2,calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(0,4,0),10));
     }
-    @ Test
+//    @ Test a
     void testThatCanCalculateThatLargestBoxesContainTotalNumberOfSlices(){
         assertEquals(20,calculateLargestBoxesContainTotalNumberOfSlices(calculateNumberOfLargestBoxToRecommendToCustomerToPurchase(calculateTheToTalNumberOfSlicesThatTheCustomerWillNeed(0,4,0),10)));
     }
