@@ -16,13 +16,14 @@ public class BankAccount {
     private String pin = "";
     private int number = 0;
 
-    public BankAccount(String name,String pin , String phone, int number) {
+    public BankAccount(String name, String pin , String phone, int number, BigDecimal balance) {
         if (phone.matches("\\d+")) {
             this.phone = phone;
         }else  System.out.println("phone number must be digits");
         this.number = number;
         this.pin = pin;
         this.name = name;
+        this.balance = balance;
     }
     public String getName() {
         return name;
