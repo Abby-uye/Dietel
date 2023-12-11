@@ -2,45 +2,21 @@ package Chapter5;
 
 public class TwelveDaysOfChristmas {
     public static void main(String[] args) {
-        for (int day =1;day<=12;day++){
-                switch (day) {
-                    case 1:
-                        System.out.print("On the first day of christmas,my true love gave to me\n");
-                        break;
-                    case 2:
-                        System.out.print("On the second day of christmas, my true love gave to me\n");
-                        break;
-                    case 3:
-                        System.out.print("On the third day of christmas,my true love gave to me\n");
-                        break;
-                    case 4:
-                        System.out.print("On the fourth day of christmas,my true love gave to me\n");
-                        break;
-                    case 5:
-                        System.out.print("On the fifth day of christmas,my true love gave to me\n");
-                        break;
-                    case 6:
-                        System.out.print("On the sixth day of christmas, my true love gave to me\n");
-                        break;
-                    case 7:
-                        System.out.print("On the seventh day of christmas,my true love gave to me\n");
-                        break;
-                    case 8:
-                        System.out.print("On the eight day of christmas,my true love gave to me\n");
-                        break;
-                    case 9:
-                        System.out.print("On the ninth day of christmas,my true love gave to me\n");
-                        break;
-                    case 10:
-                        System.out.print("On the tenth day of christmas,my true love gave to me\n");
-                        break;
-                    case 11:
-                        System.out.print("On the eleventh day of christmas,my true love gave to me\n");
-                        break;
-                    case 12:
-                        System.out.print("On the twelfth day of christmas, my true love gave to me\n");
-                        break;
-                }
+        for (int day =1 ; day <= 12; day++){
+            switch (day) {
+                case 1 -> System.out.print("On the first day of christmas,my true love gave to me\n");
+                case 2 -> System.out.print("On the second day of christmas, my true love gave to me\n");
+                case 3 -> System.out.print("On the third day of christmas,my true love gave to me\n");
+                case 4 -> System.out.print("On the fourth day of christmas,my true love gave to me\n");
+                case 5 -> System.out.print("On the fifth day of christmas,my true love gave to me\n");
+                case 6 -> System.out.print("On the sixth day of christmas, my true love gave to me\n");
+                case 7 -> System.out.print("On the seventh day of christmas,my true love gave to me\n");
+                case 8 -> System.out.print("On the eight day of christmas,my true love gave to me\n");
+                case 9 -> System.out.print("On the ninth day of christmas,my true love gave to me\n");
+                case 10 -> System.out.print("On the tenth day of christmas,my true love gave to me\n");
+                case 11 -> System.out.print("On the eleventh day of christmas,my true love gave to me\n");
+                case 12 -> System.out.print("On the twelfth day of christmas, my true love gave to me\n");
+            }
             switch (day) {
                 case 12:
                     System.out.println("Twelve Drummers Drumming,");

@@ -6,15 +6,15 @@ public class BarChartPrintingProgram {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int userInput = 0;
-        String numberOfAsteriksWant = "";
+        String numberOfAsteriskEnteredByUser = "";
         for(int count =0;count <5;count++){
             System.out.println("Enter the number of asterisks to print");
             userInput = input.nextInt();
-            numberOfAsteriksWant += userInput;
+            numberOfAsteriskEnteredByUser += userInput;
         }
-        System.out.println(numberOfAsteriksWant);
-for (int number = 0; number < numberOfAsteriksWant.length(); number++){
-    String character = String.valueOf(numberOfAsteriksWant.charAt(number));
+        System.out.println(numberOfAsteriskEnteredByUser);
+for (int index = 0; index < numberOfAsteriskEnteredByUser.length(); index++){
+    String character = String.valueOf(numberOfAsteriskEnteredByUser.charAt(index));
     int num = Integer.parseInt(character);
     for (int shape = 0; shape < num; shape++){
         System.out.print("*");

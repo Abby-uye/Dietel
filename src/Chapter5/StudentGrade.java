@@ -13,10 +13,10 @@ public class StudentGrade {
         for (int index = 0;index<5;index++){
             System.out.println("Enter your name: ");
             String name = input.nextLine();
-                input.next();
             System.out.println("Enter your grade: ");
-            int grade = input.nextInt();
-            switch (grade/10){
+            String grade = input.nextLine();
+            int studentGrade = Integer.parseInt(grade);
+            switch (studentGrade/10){
                 case (9) ->sumAGrade++;
 
                 case (10) ->sumAGrade++;
