@@ -12,15 +12,12 @@ public class ArrayInput {
             System.out.println("Enter your scores");
             int userInput = input.nextInt();
             scores[counter]=userInput;
-
         }
-       for (int enter : scores){
-           System.out.println(enter);}
-//           if (enter >largest){
-//
-//               largest = enter;
-//           }}
-//       }System.out.println(largest);
-
+       for (int score : scores){
+           System.out.println(score);
+           if (score >largest){
+               largest = score;
+           }
+       }System.out.println("The largest score is "+ largest);
     }
 }

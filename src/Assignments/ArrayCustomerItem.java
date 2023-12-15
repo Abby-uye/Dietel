@@ -13,7 +13,6 @@ public class ArrayCustomerItem {
                 System.out.println("Enter price of  item"+(column+1));
                  customerCart[row][column]= input.nextInt();
             }
-
         }
         System.out.print("          item1     item2     item3");
         System.out.println();
